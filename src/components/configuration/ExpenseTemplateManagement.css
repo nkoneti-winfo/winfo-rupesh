@@ -1,0 +1,566 @@
+/* Expense Template Management Styles */
+.expense-template-management {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Template Tabs */
+.template-tabs {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-lg);
+  overflow: hidden;
+}
+
+.tab-navigation {
+  display: flex;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-button {
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tab-button:hover {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.tab-button.active {
+  background: white;
+  color: var(--primary-blue);
+  border-bottom: 3px solid var(--primary-blue);
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: white;
+}
+
+/* Section Headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Templates Content */
+.templates-content,
+.types-content,
+.policies-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Templates Table */
+.templates-table-container,
+.types-table-container {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.templates-table-container .table,
+.types-table-container .table {
+  margin: 0;
+}
+
+.templates-table-container .table th,
+.types-table-container .table th {
+  background: var(--bg-secondary);
+  border-top: none;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  padding: var(--spacing-md);
+}
+
+.templates-table-container .table td,
+.types-table-container .table td {
+  padding: var(--spacing-md);
+  vertical-align: middle;
+}
+
+.templates-table-container .table tbody tr:hover,
+.types-table-container .table tbody tr:hover {
+  background: var(--bg-primary);
+}
+
+/* Template Info */
+.template-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.template-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.template-description {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.expense-types-cell {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Status Indicators */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-indicator.active {
+  color: var(--success);
+}
+
+.status-indicator.inactive {
+  color: var(--text-muted);
+}
+
+.default-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.default-indicator.default {
+  color: var(--warning);
+}
+
+.default-indicator.not-default {
+  color: var(--text-muted);
+}
+
+.receipt-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.receipt-indicator.required {
+  color: var(--warning);
+}
+
+.receipt-indicator.optional {
+  color: var(--text-muted);
+}
+
+/* Type Info (shared with ExpenseTypeManagement) */
+.type-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.type-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.type-category {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.description-cell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.action-buttons .btn-link {
+  padding: var(--spacing-xs);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.action-buttons .btn-link:hover {
+  background: var(--bg-primary);
+  color: var(--primary-blue);
+}
+
+.action-buttons .btn-link.text-error:hover {
+  color: var(--error);
+  background: rgba(244, 67, 54, 0.08);
+}
+
+/* Policies Placeholder */
+.policies-placeholder {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-muted);
+}
+
+.policies-placeholder i {
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.5;
+}
+
+.policies-placeholder h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.policies-placeholder p {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Template Modal */
+.template-modal {
+  max-width: 800px;
+  width: 100%;
+}
+
+.template-form {
+  padding: 0;
+}
+
+/* Form Controls (reusing from ExpenseTypeManagement) */
+.template-form .form-control {
+  font-size: 0.875rem;
+}
+
+.template-form .form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.template-form textarea.form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Checkbox Groups */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-blue);
+}
+
+.checkbox-group label {
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Radio Groups */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.radio-option:hover {
+  background: var(--bg-primary);
+  border-color: var(--primary-blue);
+}
+
+.radio-option input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-blue);
+}
+
+.radio-option label {
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.radio-option input[type="radio"]:checked + label {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Modal Footer */
+.template-modal .modal-footer {
+  padding: var(--spacing-lg);
+  gap: var(--spacing-sm);
+}
+
+.template-modal .modal-footer .btn {
+  min-width: 100px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tab-navigation {
+    flex-direction: column;
+  }
+  
+  .tab-button {
+    flex: none;
+    text-align: left;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  .templates-table-container .table th,
+  .templates-table-container .table td,
+  .types-table-container .table th,
+  .types-table-container .table td {
+    padding: var(--spacing-sm);
+    font-size: 0.875rem;
+  }
+  
+  .expense-types-cell,
+  .description-cell {
+    max-width: 120px;
+  }
+  
+  .template-modal {
+    margin: var(--spacing-sm);
+    max-width: none;
+    width: calc(100% - 2 * var(--spacing-sm));
+  }
+  
+  .template-modal .modal-body {
+    padding: var(--spacing-md);
+  }
+  
+  .template-modal .row {
+    margin: 0;
+  }
+  
+  .template-modal .row > div {
+    padding: 0;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Hide less important columns on mobile */
+  .templates-table-container .table th:nth-child(3),
+  .templates-table-container .table td:nth-child(3),
+  .templates-table-container .table th:nth-child(4),
+  .templates-table-container .table td:nth-child(4) {
+    display: none;
+  }
+  
+  .types-table-container .table th:nth-child(3),
+  .types-table-container .table td:nth-child(3),
+  .types-table-container .table th:nth-child(4),
+  .types-table-container .table td:nth-child(4),
+  .types-table-container .table th:nth-child(5),
+  .types-table-container .table td:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .template-modal .modal-footer {
+    flex-direction: column-reverse;
+    padding: var(--spacing-md);
+  }
+  
+  .template-modal .modal-footer .btn {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+    min-width: auto;
+  }
+  
+  .template-modal .modal-header {
+    padding: var(--spacing-md);
+  }
+  
+  .template-modal .modal-title {
+    font-size: 1rem;
+  }
+  
+  .radio-group {
+    gap: var(--spacing-xs);
+  }
+  
+  .radio-option {
+    padding: var(--spacing-xs);
+  }
+  
+  .section-header {
+    padding: var(--spacing-md);
+  }
+  
+  .policies-placeholder {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Accessibility */
+.tab-button:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: -2px;
+}
+
+.template-form .form-control:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.checkbox-group input:focus,
+.radio-option input:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+.action-buttons .btn-link:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Tab switching animation */
+.tab-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.tab-button:hover::before {
+  left: 100%;
+}
+
+/* Loading states */
+.templates-table-container.loading,
+.types-table-container.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Enhanced status indicators */
+.status-indicator i,
+.default-indicator i,
+.receipt-indicator i {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-indicator.inactive i,
+.default-indicator.not-default i,
+.receipt-indicator.optional i {
+  animation: none;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .tab-button {
+    border: 1px solid var(--text-primary);
+  }
+  
+  .tab-button.active {
+    background: var(--primary-blue);
+    color: white;
+  }
+  
+  .templates-table-container .table th,
+  .templates-table-container .table td,
+  .types-table-container .table th,
+  .types-table-container .table td {
+    border: 1px solid var(--text-primary);
+  }
+  
+  .radio-option {
+    border: 2px solid var(--text-primary);
+  }
+}

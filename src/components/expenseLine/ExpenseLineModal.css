@@ -1,0 +1,316 @@
+/* Expense Line Modal Styles */
+
+/* Modal Overlay - ensure it's properly centered */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  padding: var(--spacing-md);
+}
+
+.expense-line-modal {
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1051;
+}
+
+.expense-line-modal .modal-body {
+  max-height: calc(90vh - 140px);
+  overflow-y: auto;
+}
+
+.expense-line-form {
+  padding: 0;
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.input-group .currency-select {
+  flex: 0 0 80px;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: var(--bg-secondary);
+  font-size: 0.875rem;
+}
+
+.input-group .form-control {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+.input-group .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+.input-group .btn-link {
+  background: var(--bg-secondary);
+  border: 1px solid #ddd;
+  color: var(--text-muted);
+  padding: var(--spacing-sm);
+}
+
+.input-group .btn-link:hover {
+  background: var(--bg-primary);
+  color: var(--primary-blue);
+}
+
+/* Form Sections */
+.form-section {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid #e0e0e0;
+}
+
+.form-section h4 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Reimbursable Amount Display */
+.reimbursable-display {
+  padding: var(--spacing-md);
+  background: var(--bg-secondary);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.reimbursable-display .amount {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  display: block;
+}
+
+.reimbursable-display .calculating {
+  color: var(--text-muted);
+  font-style: italic;
+  display: block;
+}
+
+.exchange-rate {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: var(--spacing-xs);
+}
+
+/* Checkbox Groups */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-blue);
+}
+
+.checkbox-group label {
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Form Controls Specific to Modal */
+.expense-line-modal .form-control {
+  font-size: 0.875rem;
+}
+
+.expense-line-modal .form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.expense-line-modal textarea.form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Modal Footer */
+.expense-line-modal .modal-footer {
+  flex-shrink: 0;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-sm);
+}
+
+.expense-line-modal .modal-footer .btn {
+  min-width: 120px;
+}
+
+/* Document Upload Integration */
+.form-section .document-upload {
+  margin: var(--spacing-sm) 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .expense-line-modal {
+    margin: var(--spacing-sm);
+    max-width: none;
+    width: calc(100% - 2 * var(--spacing-sm));
+  }
+  
+  .expense-line-modal .modal-body {
+    padding: var(--spacing-md);
+    max-height: calc(100vh - 200px);
+  }
+  
+  .expense-line-modal .row {
+    margin: 0;
+  }
+  
+  .expense-line-modal .row > div {
+    padding: 0;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .form-section {
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-sm);
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group .currency-select {
+    flex: none;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+  }
+  
+  .input-group .form-control {
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    border-left: 1px solid #ddd;
+    border-top: none;
+  }
+  
+  .reimbursable-display .amount {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .expense-line-modal .modal-footer {
+    flex-direction: column-reverse;
+    padding: var(--spacing-md);
+  }
+  
+  .expense-line-modal .modal-footer .btn {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+    min-width: auto;
+  }
+  
+  .expense-line-modal .modal-header {
+    padding: var(--spacing-md);
+  }
+  
+  .expense-line-modal .modal-title {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility */
+.expense-line-modal .form-control:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.expense-line-modal .checkbox-group input:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.form-control.loading {
+  background-image: linear-gradient(45deg, transparent 33%, rgba(255, 255, 255, 0.5) 33%, rgba(255, 255, 255, 0.5) 66%, transparent 66%);
+  background-size: 20px 20px;
+  animation: loading-stripes 1s linear infinite;
+}
+
+@keyframes loading-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
+
+/* Validation styles */
+.form-group.has-error .form-control {
+  border-color: var(--error);
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.1);
+}
+
+.form-group.has-success .form-control {
+  border-color: var(--success);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+}
+
+/* Currency display enhancement */
+.currency-indicator {
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  pointer-events: none;
+}
+
+/* Enhanced form field spacing */
+.expense-line-form .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.expense-line-form .row .col-md-6:first-child {
+  border-right: 1px solid #e0e0e0;
+  padding-right: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .expense-line-form .row .col-md-6:first-child {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding-right: 0;
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+}
