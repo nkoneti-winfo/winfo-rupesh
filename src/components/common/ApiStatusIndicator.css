@@ -1,0 +1,146 @@
+/* API Status Indicator Styles */
+.api-status-indicator {
+  position: fixed;
+  top: 80px; /* Below header */
+  right: var(--spacing-lg);
+  z-index: 1000;
+  min-width: 200px;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid;
+  background: white;
+  font-size: 0.875rem;
+  animation: slideInRight 0.3s ease-out;
+}
+
+.api-status-indicator.online {
+  border-left-color: var(--success);
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+.api-status-indicator.offline {
+  border-left-color: var(--error);
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.api-status-indicator.checking {
+  border-left-color: var(--warning);
+  background-color: #fffbeb;
+  color: #92400e;
+}
+
+.status-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.status-content i {
+  font-size: 1rem;
+}
+
+.status-text {
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.retry-btn {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  background-color: currentColor;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.status-timestamp {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-bottom: var(--spacing-xs);
+}
+
+.status-message {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  opacity: 0.9;
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.api-status-indicator.checking {
+  animation: slideInRight 0.3s ease-out, pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .api-status-indicator {
+    right: var(--spacing-md);
+    left: var(--spacing-md);
+    min-width: auto;
+    top: 70px;
+  }
+  
+  .status-content {
+    flex-wrap: wrap;
+  }
+  
+  .retry-btn {
+    margin-left: auto;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .api-status-indicator {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .api-status-indicator.online {
+    background-color: #064e3b;
+    color: #a7f3d0;
+  }
+  
+  .api-status-indicator.offline {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+  }
+  
+  .api-status-indicator.checking {
+    background-color: #78350f;
+    color: #fcd34d;
+  }
+}

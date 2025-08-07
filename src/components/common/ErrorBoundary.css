@@ -1,0 +1,127 @@
+/* Error Boundary Styles */
+.error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: var(--spacing-xl);
+  background-color: var(--background-light);
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  padding: var(--spacing-xl);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+}
+
+.error-icon {
+  font-size: 4rem;
+  color: var(--error);
+  margin-bottom: var(--spacing-lg);
+}
+
+.error-content h2 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.error-content p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+}
+
+.error-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-xl);
+}
+
+.error-actions .btn {
+  min-width: 140px;
+}
+
+.error-details {
+  text-align: left;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--background-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.error-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+}
+
+.error-details summary:hover {
+  background-color: var(--background-hover);
+  border-radius: var(--radius-sm);
+}
+
+.error-stack {
+  margin-top: var(--spacing-md);
+}
+
+.error-stack h4 {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+}
+
+.error-stack pre {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  font-size: 0.75rem;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  color: #495057;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .error-boundary {
+    padding: var(--spacing-lg);
+    min-height: 300px;
+  }
+  
+  .error-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .error-icon {
+    font-size: 3rem;
+  }
+  
+  .error-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error-actions .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
